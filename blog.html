@@ -3,17 +3,18 @@ title: Blog
 layout: default
 ---
 <div class="content-container flex col">
-  <div class="flex gap-small">
-    <input type="search" class="fill" name="search" value="" placeholder="Search...">
-    <button type="button" class="icon">
+  <label class="flex gap-small" for="searchBtn">
+    <input type="search" class="fill" name="search" id="search" value="" placeholder="Search...">
+    <button type="button" class="icon" id="searchBtn">
       <img
         src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM0YjNhMGMiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1zZWFyY2giPjxjaXJjbGUgY3g9IjExIiBjeT0iMTEiIHI9IjgiLz48cGF0aCBkPSJtMjEgMjEtNC4zLTQuMyIvPjwvc3ZnPg=="
         alt="search">
     </button>
-  </div>
+  </label>
+
   <div class="fill">
     {% for post in site.posts %}
-    <a class="card flex" href="{{ post.url }}">
+    <a class="card flex blog" href="{{ post.url }}" id="{{ post.url }}">
       <img src="{{ post.image }}" alt="{{ post.imagealt }}">
       <div class="flex col padding right">
         <h2>
